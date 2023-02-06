@@ -8,7 +8,7 @@ public class RandomGroups52{
         System.out.println("ranomizer branch");
         System.out.println("MASTER branch");
         System.out.println("Works fine");
-
+        System.out.println("Second developer was here");
         System.out.println(readStudentList());
         randomGroups(readStudentList(), 5);
     }
