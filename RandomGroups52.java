@@ -1,5 +1,6 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class RandomGroups52{
@@ -7,6 +8,7 @@ public class RandomGroups52{
         System.out.println("Works fine");
 
         System.out.println(readStudentList());
+        randomGroups(readStudentList(), 5);
     }
 
     public static ArrayList<String> readStudentList(){
@@ -24,5 +26,18 @@ public class RandomGroups52{
 
 
         return arr;
+    }
+    public static void randomGroups(ArrayList<String> arr, int numGroups){
+
+        Collections.shuffle(arr);
+        ArrayList<ArrayList<String>> groups = new ArrayList<>();
+        for(int i = 0;i<numGroups; i++){
+            groups.add(new ArrayList<String>());
+        }
+        for(int i = 0; i< arr.size();i++){
+            groups.get(i%numGroups).add(arr.get(i));
+        }
+        System.out.println(groups);
+
     }
 }
